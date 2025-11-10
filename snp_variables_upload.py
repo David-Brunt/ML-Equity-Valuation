@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-s&p_variables_upload.py
+snp_variables_upload.py
 
 - Reads S&P 500 universe from SP500.csv (ticker, company name, sector)
 - Scrapes DCF-relevant items for EXACTLY four fiscal years: 2024, 2023, 2022, 2021
 - Drops a ticker if ANY required datapoint is missing for any of those years
 - Flattens into one row per ticker with per-year columns
-- Upserts rows into Supabase table: S&P500_DCF_Variables
+- Upserts rows into Supabase table: snp500_dcf_variables
 
 Requirements (install in your venv):
   pip install yfinance pandas numpy python-dotenv supabase requests lxml html5lib
@@ -31,7 +31,7 @@ from supabase import Client, create_client
 # =========================
 
 YEARS = [2024, 2023, 2022, 2021]
-TABLE_NAME = "S&P500_DCF_Variables"
+TABLE_NAME = "snp500_dcf_variables"
 CSV_PATH = "SP500.csv"
 RATE_LIMIT_SECONDS = 0.4  # be gentle to Yahoo
 
