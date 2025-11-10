@@ -3,7 +3,7 @@
 snp_variables_upload.py
 
 - Reads S&P 500 universe from SP500.csv (ticker, company name, sector)
-- Scrapes DCF-relevant items for EXACTLY four fiscal years: 2024, 2023, 2022, 2021
+- Scrapes DCF-relevant items for all available fiscal years: 2024, 2023, 2022, 2021
 - Drops a ticker if ANY required datapoint is missing for any of those years
 - Flattens into one row per ticker with per-year columns
 - Upserts rows into Supabase table: snp500_dcf_variables
